@@ -11,11 +11,11 @@
    ()())(
 */ 
 
-let innerString = undefined;
+/*let innerString = undefined;
 let counter = 0;
 flag = true;
 
-innerString = prompt("Введите строку из скобок: ");
+//innerString = prompt("Введите строку из скобок: ");
 
 for (i=0;i<innerString.length;i++){
     if (innerString[i]==="(") counter+=1
@@ -26,7 +26,43 @@ for (i=0;i<innerString.length;i++){
     }
 }
 flag ? console.log(`Строка ${innerString} правильная`) : console.log(`Строка ${innerString} неправильная`)
+*/
 
 
+//Функции
+/*
+function showMsg(name='функция') {
+    console.log(`Привет, я ${name}!`);
+}
+*/
+function separete(string,separator=","){
+    separatedString = [];
+    pushingString = "";
+    for (i=0;i<string.length;i++){
+        pushingString+=string[i];
+        if (string[i]===separator) {
+            separatedString.push(pushingString);
+            pushingString="";
+            continue;
+        }
+    }
+    separatedString.push(pushingString);
+    return separatedString;
+}
+
+function getABC(string){
+    ABC = {a:undefined,b:undefined,c:undefined};
+    separetedString = separete(string,",");
+    ABC.a = separatedString[0];
+    ABC.b = separatedString[1];
+    ABC.c = separatedString[2];
+    return ABC;
+}
+
+
+
+/*
+console.log(showMsg(""))
+*/
 
 
