@@ -1,7 +1,7 @@
 <html>
     <head>
         <script src="learn.js"></script>
-        <style src="main.css"></style>
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
         <div>
@@ -27,7 +27,14 @@
 
         <br>
         <br>
-        <button class = "regular" onclick="upper()"></button>
+        <div id = "transactions"></div>
+        <br>
+        <input class = "regular_input" id="transactionInput"> <br>
+        <button class = "regular" onclick="add()">Записать!</button>
+        <br>
+        <button class = "regular" onclick="show()">Показать.</button>
+        <br>
+        <br>
         https://learn.javascript.ru/debugging-chrome
     </body>
 </html>

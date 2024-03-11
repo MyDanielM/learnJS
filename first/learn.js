@@ -38,11 +38,26 @@ function showMsg(name='функция') {
 
 console.log(showMsg(""))
 */
-let count = 0;
-function upper(){
-    ++count;
-    console.log(count);
+let transactions = [];
+
+function add(){
+    let elem = document.getElementById("transactionInput");
+    let value = elem.value;
+    transactions.push(value);    
+    elem.value="";
 }
+
+function show(){
+    let elem = document.getElementById("transactions");
+    elem.innerHTML = "";
+    for (let i=0;i<transactions.length;i++){
+        if (transactions[i]==='') continue;
+        let newDiv = document.createElement('div');
+        newDiv.innerHTML = transactions[i];
+        elem.append(newDiv);
+    }
+}
+
 
 
 
