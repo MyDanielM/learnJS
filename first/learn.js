@@ -1,3 +1,4 @@
+'use strict';
 /* На вход подается строка состоящая из скобок "(" и ")"
    Нужно определить, строка является правильной или нет.
    Правильной строкой является та строка, где на каждую открывающуюся скобку есть закрывающаяся.
@@ -34,35 +35,43 @@ flag ? console.log(`Строка ${innerString} правильная`) : console
 function showMsg(name='функция') {
     console.log(`Привет, я ${name}!`);
 }
-*/
-function separete(string,separator=","){
-    separatedString = [];
-    pushingString = "";
-    for (i=0;i<string.length;i++){
-        pushingString+=string[i];
-        if (string[i]===separator) {
-            separatedString.push(pushingString);
-            pushingString="";
-            continue;
-        }
-    }
-    separatedString.push(pushingString);
-    return separatedString;
-}
 
-function getABC(string){
-    ABC = {a:undefined,b:undefined,c:undefined};
-    separetedString = separete(string,",");
-    ABC.a = separatedString[0];
-    ABC.b = separatedString[1];
-    ABC.c = separatedString[2];
-    return ABC;
+console.log(showMsg(""))
+*/
+let count = 0;
+function upper(){
+    ++count;
+    console.log(count);
 }
 
 
 
 /*
-console.log(showMsg(""))
+function ask(impression, truth, dare){
+    if (impression === "Правда") truth()
+    else dare();
+}
+
+ask("Правда",
+function () {console.log("Правда")},
+function () {console.log("Действие")}
+)
+
+
+let pow = (a,b) => a**b;
+
+pow = (a) => a**a;
+
+console.log(pow(3))
+
+function ask(question, yes, no) {
+    if (confirm(question)) yes()
+    else no();
+  }
+  
+ask(
+    "Вы согласны?",
+    () => alert("Вы согласились."),
+    () => alert("Вы отменили выполнение.")
+);
 */
-
-
