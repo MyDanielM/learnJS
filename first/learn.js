@@ -57,8 +57,67 @@ function show(){
         elem.append(newDiv);
     }
 }
+/*
+let dog = {
+    name: "Sharik",
+    age: 3,
+    sayHi: ()=>{
+        return "Waf!";
+    },
+}
+console.log(`Собаке с именем ${dog.name} ${dog.age} лет. Она говорит: ${dog.sayHi()}`)
 
 
+const AGE = {
+    value: 12
+}
+console.log(AGE.value);
+AGE.value = 15;
+
+let user = {
+    username: "admin",
+    "is Admin": true,
+}
+let key = prompt("Что хочется узнать?", "username")
+console.log(user[key]);
+
+let name = prompt("Как назвать свойство?", "name");
+
+let newUser = {
+    [name]: "Daniel",
+};
+
+console.log(newUser[name]);
+
+*/
+
+function makeUser( name, age, sername = undefined ) {
+    return {
+        name,
+        sername,
+        age,
+    }
+}
+
+let user = makeUser( "Daniel", 16 );
+if ( user.defend === undefined ) {
+    if ( user.age>=18 ) {
+        user.defend = true;
+    } else {
+        user.defend = false;
+    }
+}
+
+if ( "sername" in user ) {
+    user.sername = "Myaktnykh";
+}
+
+
+console.log(user);
+
+for ( let key in user ) {
+    console.log(user[key]);
+}
 
 
 /*
