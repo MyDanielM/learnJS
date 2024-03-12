@@ -1,4 +1,13 @@
 'use strict';
+
+function calculateTime(func){
+    let time = performance.now();
+    let result = func();
+    time = performance.now() - time;
+    console.log(`Время выполнения сортировки ниже = ${time.toFixed(2)} ms.`);
+    return result;
+}
+
 //Функция создания массива
 function createArr(length){
     let arr=[];
@@ -48,13 +57,8 @@ function cocktailSorting(sortingArr){
 }
 
 
-let arr = createArr(100);
+let arr = createArr(300);
 console.log(`Исходный массив: ${arr}`);
-let time = performance.now();
-console.log(`Отсортированный массив пузырьком: ${bubbleSorting(arr)}`);
-time = performance.now() - time;
-console.log(`Время выполнения = ${time.toFixed(2)} ms.`);
-time = performance.now();
-console.log(`Отсортированный массив перемешиванием: ${cocktailSorting(arr)}`);
-time = performance.now() - time;
-console.log(`Время выполнения = ${time.toFixed(2)} ms.`);
+console.log(`Отсортированный массив пузырьком: ${calculateTime(()=>bubbleSorting(arr))}`);
+console.log(`Отсортированный массив перемешиванием: ${calculateTime(()=>cocktailSorting(arr))}`);
+
