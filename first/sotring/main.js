@@ -1,10 +1,10 @@
 'use strict';
-
+//Функция подсчета времени выполнения функции
 function calculateTime(func) {
     let time = performance.now();
     let result = func();
     time = performance.now() - time;
-    console.log(`Время выполнения сортировки ниже = ${time.toFixed(2)} ms.`);
+    console.log(`Время выполнения = ${time.toFixed(2)} ms.`);
     return result;
 }
 
@@ -30,6 +30,7 @@ function bubbleSorting(sortingArr) {
     }
     return newArr;
 }
+// Сортировка перемешиванием
 function cocktailSorting(sortingArr) {
     let newArr = sortingArr.slice();
     let left = 0;
