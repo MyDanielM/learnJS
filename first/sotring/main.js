@@ -1,6 +1,6 @@
 'use strict';
 
-function calculateTime(func){
+function calculateTime(func) {
     let time = performance.now();
     let result = func();
     time = performance.now() - time;
@@ -9,7 +9,7 @@ function calculateTime(func){
 }
 
 //Функция создания массива
-function createArr(length){
+function createArr(length) {
     let arr=[];
     for (let i = 0; i<length;i++){
         arr.push(Math.round(Math.random()*(1000-1)));
@@ -17,7 +17,7 @@ function createArr(length){
     return arr;
 }
 // Пузырьковая сортировка
-function bubbleSorting(sortingArr){
+function bubbleSorting(sortingArr) {
     let newArr = sortingArr.slice();
     for (let i = 0;i<newArr.length;i++){
         for (let j=0;j<newArr.length;j++){
@@ -30,12 +30,12 @@ function bubbleSorting(sortingArr){
     }
     return newArr;
 }
-function cocktailSorting(sortingArr){
+function cocktailSorting(sortingArr) {
     let newArr = sortingArr.slice();
     let left = 0;
     let right = newArr.length-1;
     while (left<right){
-        for (let i = left;i<right;i++){
+        for (let i = left;i<right;i++) {
             if (newArr[i]>newArr[i+1]){
                 let tmp = newArr[i];
                 newArr[i] = newArr[i+1];
@@ -43,7 +43,7 @@ function cocktailSorting(sortingArr){
             }
         }
         right--;
-        for (let i = right; left<i;i--){
+        for (let i = right; left<i;i--) {
             if (newArr[i]<newArr[i-1]){
                 let tmp = newArr[i];
                 newArr[i] = newArr[i-1];
@@ -57,7 +57,7 @@ function cocktailSorting(sortingArr){
 }
 
 
-let arr = createArr(300);
+let arr = createArr(50);
 console.log(`Исходный массив: ${arr}`);
 console.log(`Отсортированный массив пузырьком: ${calculateTime(()=>bubbleSorting(arr))}`);
 console.log(`Отсортированный массив перемешиванием: ${calculateTime(()=>cocktailSorting(arr))}`);
